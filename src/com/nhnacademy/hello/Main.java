@@ -1,8 +1,9 @@
+//25.12.24
 package com.nhnacademy.hello;
 
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main  {
     public static void main(String[] args) throws IOException{
@@ -247,7 +248,7 @@ public class Main  {
         System.out.print("입력: ");
          input = reader.readLine(); // 한줄을 입력받기
 
-        if (input.equals("quit")) {
+        if ("quit".equals(input)) {
             System.out.println("프로그램을 종료합니다.");
             break;  // 반복문 탈출
         }
@@ -509,7 +510,7 @@ public class Main  {
         while(true){
             System.out.print("숫자를 입력하세요 (종료: quit): ");
             input = reader.readLine();
-            if(input.equals("quit")){
+            if("quit".equals(input)){
                 System.out.println("최종 합계: " + sum);
                 System.out.println("프로그램을 종료합니다.");
                 break;
@@ -535,7 +536,7 @@ public class Main  {
         while(true){
             System.out.print("입력 (종료: quit) > ");
             input = reader.readLine();
-            if(input.equals("quit")){
+            if("quit".equals(input)){
                 System.out.println("프로그램을 종료합니다.");
                 break;
             }
