@@ -254,7 +254,7 @@ public class Main  {
 
          System.out.println("입력한 값: " + input);
         }
-
+/*
 
         //종료 조건 검사:
 
@@ -276,5 +276,271 @@ public class Main  {
             // 처리 로직
             }
         }
+*/
+
+        //연습문제
+
+        // 문제 1 : 다음 변수 선언 중 올바른 것을 모두 고르시오.
+        /*
+        int 1stNumber = 10;      // (a) <-- 숫자로 시작 불가
+        String user-name = "Kim"; // (b) <-- 하이픈(-) 사용 불가
+        double _price = 99.9;    // (c)
+        boolean isValid = true;  // (d)
+        int class = 5;           // (e) <-- 예약어 사용 불가
+        String $message = "Hi";  // (f)
+        */
+       // 정답 : (c), (d), (f)
+
+       //문제 2 : 다음 코드의 출력 결과를 작성하시오
+        /*
+        int x = 5;
+        int y = x;
+        x = 10;
+        System.out.println("x = " + x + ", y = " + y);
+         */
+        // 정답 : x = 10, y = 5
+
+        // 문제 3: 아래 변수명을 camelCase 규칙에 맞게 수정하시오.
+
+        /*
+        원본	        camelCase
+        total_count	    ?
+        USERNAME	    ?
+        IsCompleted	    ?
+         */
+        // 정답 : totalCount, userName, isCompleted
+
+        //연습: Primitive type vs Reference type
+        //문제 4: 다음 코드의 출력 결과를 예측하시오.
+        /*
+        int a = 10;
+        int b = a;
+        a = 20;
+        System.out.println("a = " + a + ", b = " + b);
+
+        // 정답 : a = 20, b = 10
+
+        int[] arr1 = {1, 2, 3};
+        int[] arr2 = arr1; // arr1의 참조를 arr2에 복사 (주소공유)
+        arr1[0] = 100;
+        System.out.println("arr1[0] = " + arr1[0] + ", arr2[0] = " + arr2[0]);
+
+        // 정답 : arr1[0] = 100, arr2[0] = 100
+         */
+
+        //문제 5: 다음 중 Reference type을 모두 고르시오.
+
+        /*
+        (a) int
+        (b) String  <-- Reference class
+        (c) double
+        (d) Integer <-- Wrapper class
+        (e) boolean
+        (f) int[] <-- Reference (배열)
+        (g) char
+         */
+
+        // 정답 : (b), (d), (f)
+
+        //문제 6: 다음 코드의 출력 결과를 예측하시오.
+
+        /*
+        String s1 = "Hello";
+        String s2 = "Hello";
+        String s3 = new String("Hello");
+
+        System.out.println(s1 == s2); // Stirng pool에서 같은 리터럴은 같은 주소 참조
+        System.out.println(s1 == s3); // new String은 새로운 객체 생성(다른객체)
+        System.out.println(s1.equals(s3));  // 값 비교
+        + 문자열 비교는 equals() 사용
+         */
+
+        // 정답 : true, false, true
+
+        //연습: Primitive type과 Wrapper class
+        //문제 7: primitive type과 Wrapper class의 차이를 설명하고, 각각의 기본값을 작성하시오.
+
+        /*
+        타입	primitive   	Wrapper	    primitive 기본값	Wrapper 기본값
+        정수	int	            Integer 	        ?	            ?
+        실수	double	        Double	            ?	            ?
+        논리	boolean	        Boolean	            ?	            ?
+         */
+        
+        // 정답 : 0, null, 0.0, null, false, null
+        // 차이점 :Primitive: 값 자체를 저장, null 불가, 성능 우수
+            //    Wrapper: 객체로 감싸 저장, null 가능, 컬렉션에서 사용 가능
+
+
+        //문제 8: 다음 코드의 출력 결과를 작성하시오.
+        /*
+        Integer a = 100;
+        Integer b = 100;
+        Integer c = 200; // 이유 : -128 ~ 127 범위는 Integer Cache 사용, 같은 객체 참조
+        Integer d = 200; //       그 외 값은 새로운 객체 생성, 다른 객체 참조
+        
+
+        System.out.println(a == b);
+        System.out.println(c == d); // equals() 사용해야 값 비교 가능
+        */
+
+        //정답 : true, false
+
+        //문제 9: 문제 9: 다음 코드에서 발생하는 문제와 해결 방법을 설명하시오.
+
+        /*
+        Integer value = null;
+        int result = value + 10; 
+        */
+
+        // 정답 : NullPointerException 발생
+        // 이유: value가 null인데 unboxing(Integer → int 변환)을 시도하면서 예외 발생
+
+        Integer value = null;
+        int result = (value != null) ? value + 10 : 10;  // null 체크 후 사용
+
+
+        // 문제 10: BufferedReader 사용 시 필요한 import문과 예외 처리를 모두 작성하시오.
+
+        /*
+        // 필요한 import문 3개: // 정답:
+        // 1. _______  // 1. import java.io.BufferedReader;
+        // 2. _______  // 2. import java.io.InputStreamReader;
+        // 3. _______  // 3. import java.io.IOException;
+
+
+        public class Main {
+            public static void main(String[] args) _______ {  // 예외 처리
+                BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+                System.out.print("이름: ");
+                // ...
+            }
+        }
+       
+        //문제 11: 아래 코드가 동작하도록 빈칸을 완성하시오.
+
+        /*
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("이름: ");
+        String name = _______;
+        System.out.println("입력한 이름: " + name);
+         */
+       
+        // 정답 : reader.readLine();
+        //이름: 홍길동
+        //입력한 이름: 홍길동
+       
+         //문제 12: 사용자로부터 나이를 입력받아 정수로 변환하는 코드를 완성하시오.
+
+         /*
+         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("나이: ");
+        String ageStr = reader.readLine();
+        int age = _______;
+        System.out.println("입력한 나이: " + age);
+          */
+
+        // 정답 : Integer.parseInt(ageStr);
+        //나이: 25
+        //입력한 나이: 25
+
+        //연습: while 반복문
+        //문제 13: 1부터 10까지 출력하는 while문을 완성하시오.
+
+        /*
+        int i = 1;
+        while (_______) {
+            System.out.println(i);
+            _______;
+        }
+         */
+        // 정답 : i <= 10, i++
+
+
+        //문제 14: 다음 코드의 출력 결과를 작성하시오.
+
+        /*
+        int n = 5;
+        int sum = 0;
+        while (n > 0) {
+            sum += n;
+            n--;
+        }
+        System.out.println("합계: " + sum);
+         */
+        // 정답 : 합계: 15
+
+        //문제 15: 무한 루프를 사용하여 사용자가 "quit"을 입력할 때까지 입력받은 문자열을 출력하는 프로그램을 작성하시오
+
+        /*
+        BufferedReader redear = new BufferedReader(new InputStreamReader(System.in));
+        while(true){
+            String input = reader.readLine();
+            if(input.equals("quit")){
+                break;
+            }
+                System.out.println(input);
+        }
+         */
+
+        // 종합 연습
+        /*문제 16: 다음 요구사항을 만족하는 프로그램을 작성하시오.
+            1. 사용자에게 "숫자를 입력하세요 (종료: quit): " 메시지를 출력
+            2. 입력받은 값이 "quit"이면 지금까지 입력한 숫자들의 합을 출력하고 종료
+            3. 숫자가 입력되면 누적 합계를 출력
+         */
+        /*
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        int sum = 0;
+        while(true){
+            System.out.println("숫자를 입력하세요 (종료: quit): ");
+            String input = reader.readLine();
+            if(input.equals("quit")){
+                System.out.println("최종 합계: " + sum);
+                break;
+            }
+        sum += Integer.parseInt(input);
+        System.out.println("프로그램을 종료합니다.");
+    }
+            
+         */
+        reader = new BufferedReader(new InputStreamReader(System.in));
+        int sum = 0;
+        while(true){
+            System.out.print("숫자를 입력하세요 (종료: quit): ");
+            input = reader.readLine();
+            if(input.equals("quit")){
+                System.out.println("최종 합계: " + sum);
+                System.out.println("프로그램을 종료합니다.");
+                break;
+            }
+        sum += Integer.parseInt(input);
+        System.out.println("현재 합계: " + sum);
+        
+        }
+
+        //프로젝트: 반복 입력 처리
+        /*
+        구현 목표: 사용자 입력을 반복적으로 받아 처리하고, 종료 조건을 검사할 수 있다.
+
+        구현할 기능:
+        BufferedReader로 사용자 입력 받기
+        입력받은 값 출력하기
+        "quit" 입력 시 프로그램 종료
+         */
+
+        reader = new BufferedReader(new InputStreamReader(System.in));
+
+        System.out.println("=== 입력 테스트 ===");
+        while(true){
+            System.out.print("입력 (종료: quit) > ");
+            input = reader.readLine();
+            if(input.equals("quit")){
+                System.out.println("프로그램을 종료합니다.");
+                break;
+            }
+            System.out.println("입력한 값: " + input);
+        }
+
     }   
 }
