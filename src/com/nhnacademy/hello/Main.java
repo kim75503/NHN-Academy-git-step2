@@ -1,8 +1,11 @@
 package com.nhnacademy.hello;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
-public class Main {
-    public static void main(String[] args) {
+public class Main  {
+    public static void main(String[] args) throws IOException{
 
         int age; //선언만
         age = 25; //초기화
@@ -158,7 +161,7 @@ public class Main {
 
         //메모리 구조 차이:
         // Primitive: Stack에 값 직접 저장
-        num = 10;        // Stack: [num = 10]
+        int num1 = 10;        // Stack: [num1 = 10]
 
         // Reference: Stack에 참조, Heap에 객체 저장
         String str = "Hello"; // Stack: [str = 0x100] → Heap: ["Hello"]
@@ -176,5 +179,102 @@ public class Main {
         System.out.println(s1 == s2);      // false (다른 객체)
         System.out.println(s1.equals(s2)); // true (값이 같음)
 
-    }
+        /*
+        Reference type의 종류:
+
+        클래스 타입: String, Integer, 사용자 정의 클래스
+        인터페이스 타입: List, Map 등
+        배열 타입: int[], String[] 등
+        열거 타입: enum
+        */
+        
+        //문자열 비교
+        /*
+        == vs equals():
+
+        String input = reader.readLine();  // 사용자가 "quit" 입력
+
+        // ❌ 잘못된 방법: == 는 주소(참조)를 비교
+        if (input == "quit") {
+        // 동작하지 않을 수 있음!
+        }
+
+        // ✅ 올바른 방법: equals()는 값을 비교
+        if (input.equals("quit")) {
+        System.out.println("종료합니다.");
+        }
+
+        왜 ==를 사용하면 안 되는가?:
+
+        ==는 두 변수가 **같은 객체(메모리 주소)**를 가리키는지 비교
+        equals()는 두 문자열의 **내용(값)**이 같은지 비교
+        사용자 입력은 새로운 String 객체로 생성되므로 ==가 실패할 수 있음
+
+        Null-safe 비교:
+
+        String input = reader.readLine();
+
+        // input이 null이면 NullPointerException 발생!
+        if (input.equals("quit")) { ... }
+
+        // ✅ 안전한 방법: 리터럴을 앞에
+        if ("quit".equals(input)) { ... }
+        */
+        //대소문자 무시 비교:
+
+        String input = "Quit";
+
+        // 대소문자 구분
+        input.equals("quit");        // false
+
+        // 대소문자 무시
+        input.equalsIgnoreCase("quit");  // true
+         
+         //NHN Academy 강사님의 팁: 가능한 최종 프로젝트 전까진 Ai 사용하지 않고 직접 해보기
+
+         //while 기본 구조:
+
+            while (true) {
+            // 조건이 true인 동안 반복 실행
+            break; // 반복문 탈출
+            }
+        
+        //while(true) 무한 루프 패턴:
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+
+        while (true) {
+        System.out.print("입력: ");
+         input = reader.readLine(); // 한줄을 입력받기
+
+        if (input.equals("quit")) {
+            System.out.println("프로그램을 종료합니다.");
+            break;  // 반복문 탈출
+        }
+
+         System.out.println("입력한 값: " + input);
+        }
+
+
+        //종료 조건 검사:
+
+        // 패턴 1: break 사용
+        while (true) {
+         input = reader.readLine();
+        if ("quit".equals(input)) {
+            break;  // 루프 탈출
+            }
+        }
+        // 처리 로직
+        
+
+        // 패턴 2: 조건식 사용
+        input = "";
+        while (!input.equals("quit")) {
+            input = reader.readLine();
+            if (!input.equals("quit")) {
+            // 처리 로직
+            }
+        }
+    }   
 }
