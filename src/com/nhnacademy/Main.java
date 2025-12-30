@@ -1,5 +1,5 @@
 //25.12.24
-package com.nhnacademy.hello;
+package com.nhnacademy;
 
 import java.io.BufferedReader;
 import java.io.IOException;
