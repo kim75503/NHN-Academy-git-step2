@@ -2,9 +2,6 @@
 
 ---
 
-**사전 지식** (이 날 시작 전 알아야 할 것):
-- Day 1 내용: 개발 환경 구축, IDE 사용법, Maven 프로젝트 구조
-
 **학습 목표**:
 - 변수 선언 및 초기화
 - Primitive type과 Reference type 구분
@@ -35,7 +32,7 @@
 - 반복 입력 동작
 - 종료 조건 검사 및 정상 종료
 
-## 학습 자료
+## 개념 정리
 
 <details>
 <summary><strong>Step 2-1. Variable Declaration and Initialization</strong></summary>
