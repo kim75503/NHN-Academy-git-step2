@@ -418,3 +418,29 @@ public static void main(String[] args) {
 
 ---
 
+### 느낀점
+
+- **문제 4**에서 **Reference (배열)**: `arr2 = arr1`은 참조(주소)를 복사하므로, 같은 배열을 가리킴. `arr1[0]`을 변경하면 `arr2[0]`도 변경되는 부분이 헷갈렸는데 개념을 바로잡을 수 있었다.
+```java
+int a = 10;
+int b = a;
+a = 20;
+System.out.println("a = " + a + ", b = " + b);
+
+int[] arr1 = {1, 2, 3};
+int[] arr2 = arr1;
+arr1[0] = 100;
+System.out.println("arr1[0] = " + arr1[0] + ", arr2[0] = " + arr2[0]);
+```
+- 직접 출력해보니 참조 비교와 값 비교의 차이를 이해하게 되었다.
+
+-**문제 8**:에서 Java는 -128 ~ 127 범위의 Integer를 캐싱합니다. 100은 캐시 범위 내이므로 같은 객체를 참조하지만, 200은 범위 밖이므로 다른 객체가 생성됩니다. 값 비교시에는 `equals()`를 사용해야 한다는 사실을 알게 되었습니다.
+```java
+Integer a = 100;
+Integer b = 100;
+Integer c = 200;
+Integer d = 200;
+
+System.out.println(a == b);
+System.out.println(c == d);
+```
